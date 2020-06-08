@@ -1,11 +1,11 @@
-//import Schools from "views/dashboard/admin/schools/index.school";
+import Schools from "views/dashboard/admin/colegios/index.colegio";
 
 var routes = [
   {
     path: "/schools",
     name: "Colegios",
-    icon: "fas fa-school text-white",
-    //  component: Schools,
+    icon: "business",
+    component: Schools,
     layout: "/dashboard",
     rol: "admin",
     show: "true",

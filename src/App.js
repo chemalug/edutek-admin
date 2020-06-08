@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { AuthProvider } from "utils/AuthProvider";
+import { AuthProvider, AuthContext } from "utils/AuthProvider";
 import PrivateRoute from "utils/PrivateRoute";
 
 import AuthNavbar from "components/Navbars/AuthNavbar";
@@ -9,6 +9,7 @@ import LoginPage from "views/auth/Login";
 import RegisterPage from "views/auth/Register";
 
 import RoutePages from "views/RoutePages";
+import ColegiosPage from "./views/dashboard/admin/colegios/index.colegio";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
           <Route exact path="/login" component={LoginPage} />
           <Route exact path="/register" component={RegisterPage} />
           <Switch>
-            <PrivateRoute exact path="/dashboard" component={RoutePages} />
+            <Route exact path="/dashboard" component={RoutePages} />
           </Switch>
         </div>
       </Router>

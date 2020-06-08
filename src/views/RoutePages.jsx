@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Switch } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import { AuthContext } from "utils/AuthProvider";
 
 import { db } from "fire/firebase";
@@ -7,9 +7,13 @@ import { db } from "fire/firebase";
 import PrivateRoute from "utils/PrivateRoute";
 import AdminDashboard from "views/dashboard/admin/admin.dashboard";
 
+import M from "materialize-css";
+
 const RoutePages = (props) => {
   const [isAdmin, setIsAdmin] = useState(false);
   const { currentUser } = useContext(AuthContext);
+
+  M.AutoInit();
   if (currentUser) {
     db.ref(`/users/${currentUser.uid}`).once("value", (user) => {
       setIsAdmin(user.val().info.role.isAdmin);
@@ -18,7 +22,7 @@ const RoutePages = (props) => {
       return (
         <div>
           <Switch>
-            <PrivateRoute exact path="/dashboard" component={AdminDashboard} />
+            <Route exact path="/dashboard" component={AdminDashboard} />
           </Switch>
         </div>
       );
