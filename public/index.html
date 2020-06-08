@@ -16,20 +16,29 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
     <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
     <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
+      href="dist/vendors/vendors.min.css"
+      type="text/css"
       rel="stylesheet"
     />
+    <!--<link href="dist/css/materialize.css" type="text/css" rel="stylesheet" />-->
     <link
-      href="/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css"
+      href="dist/css/themes/vertical-dark-menu-template/style.css"
+      type="text/css"
       rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
 
     <!--
@@ -43,7 +52,13 @@
     -->
     <title>Edutek | Elearning</title>
   </head>
-  <body class="grey darken-4">
+  <body
+    class="vertical-layout page-header-dark vertical-menu-collapsible vertical-dark-menu preload-transitions 2-columns"
+    data-open="click"
+    data-menu="vertical-dark-menu"
+    data-col="2-columns"
+  >
+    
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
@@ -56,6 +71,25 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <!--
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        M.AutoInit();
+      });
+    </script>-->
+    <!-- jQuery Library -->
+    <script type = "text/javascript"
+         src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>   
+    <script type="text/javascript" src="dist/vendors/vendors.min.css"></script>
+    <script type="text/javascript" src="dist/js/plugins.js"></script>
+    <script type="text/javascript" src="dist/js/search.js"></script>
+
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        M.AutoInit();
+      });
+    </script>-->
   </body>
 </html>

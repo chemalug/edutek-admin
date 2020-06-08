@@ -7,7 +7,8 @@ import AuthNavbar from "components/Navbars/AuthNavbar";
 import LandingPage from "views/Landing/LandingPage";
 import LoginPage from "views/auth/Login";
 import RegisterPage from "views/auth/Register";
-import Dashboard from "views/dashboard/Dashboard";
+
+import RoutePages from "views/RoutePages";
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
           <Route exact path="/login" component={LoginPage} />
           <Route exact path="/register" component={RegisterPage} />
           <Switch>
-            <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            <PrivateRoute exact path="/dashboard" component={RoutePages} />
           </Switch>
         </div>
       </Router>

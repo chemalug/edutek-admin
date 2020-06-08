@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { auth } from "fire/firebase";
 import { AuthContext } from "utils/AuthProvider";
 const LoginPage = (props) => {
@@ -21,68 +21,91 @@ const LoginPage = (props) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-
-    auth
-      .signInWithEmailAndPassword(authData.email, authData.password)
-      .then((user) => {
-        console.log(user);
-      });
+    auth.signInWithEmailAndPassword(authData.email, authData.password);
   };
 
   return (
-    <div className="container">
-      <div style={{ marginTop: "4rem" }} className="row">
-        <div className="col s8 offset-s2">
-          <Link to="/" className="btn-flat waves-effect">
-            <i className="material-icons left">keyboard_backspace</i> Back to
-            home
-          </Link>
-          <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-            <h4 className="white-text">
-              <b>Inicia sesión</b> a continuación
-            </h4>
-            <p className="grey-text text-darken-1">
-              ¿No tienes una cuenta? <Link to="/register">Registrarme</Link>
-            </p>
+    <div className="login-bg">
+      <div className="row">
+        <div className="col s12">
+          <div className="container">
+            <div id="login-page" className="row">
+              <div className="col s12 m6 l4 z-depth-4 card-panel border-radius-6 login-card bg-opacity-8">
+                <form className="login-form" noValidate onSubmit={onSubmit}>
+                  <div className="row">
+                    <div className="input-field col s12">
+                      <h5 className="ml-4">Ingreso</h5>
+                    </div>
+                  </div>
+                  <div className="row margin">
+                    <div className="input-field col s12">
+                      <i className="material-icons prefix pt-2">
+                        person_outline
+                      </i>
+                      <input
+                        onChange={onChange}
+                        value={authData.email}
+                        id="email"
+                        name="email"
+                        type="email"
+                      />
+                      <label htmlFor="username" className="center-align">
+                        Email
+                      </label>
+                    </div>
+                  </div>
+                  <div className="row margin">
+                    <div className="input-field col s12">
+                      <i className="material-icons prefix pt-2">lock_outline</i>
+                      <input
+                        onChange={onChange}
+                        value={authData.password}
+                        id="password"
+                        name="password"
+                        type="password"
+                      />
+                      <label htmlFor="password">Password</label>
+                    </div>
+                  </div>
+                  {/*<div className="row">
+                  <div className="col s12 m12 l12 ml-2 mt-1">
+                    <p>
+                      <label>
+                        <input type="checkbox" />
+                        <span>Remember Me</span>
+                      </label>
+                    </p>
+                  </div>
+                </div>*/}
+                  <div className="row">
+                    <div className="input-field col s12">
+                      <button
+                        type="submit"
+                        className="btn waves-effect waves-light border-round gradient-45deg-purple-deep-orange col s12"
+                      >
+                        Login
+                      </button>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="input-field col s6 m6 l6">
+                      <p className="margin medium-small">
+                        <a href="user-register.html">Registrarme ahora!</a>
+                      </p>
+                    </div>
+                    <div className="input-field col s6 m6 l6">
+                      <p className="margin right-align medium-small">
+                        <a href="user-forgot-password.html">
+                          Olvidaste tu password ?
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
-          <form noValidate onSubmit={onSubmit}>
-            <div className="input-field col s12">
-              <input
-                onChange={onChange}
-                value={authData.email}
-                id="email"
-                name="email"
-                type="email"
-                className="white-text"
-              />
-              <label htmlFor="email">Email</label>
-            </div>
-            <div className="input-field col s12">
-              <input
-                onChange={onChange}
-                value={authData.password}
-                id="password"
-                name="password"
-                type="password"
-                className="white-text"
-              />
-              <label htmlFor="password">Password</label>
-            </div>
-            <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-              <button
-                style={{
-                  width: "150px",
-                  borderRadius: "3px",
-                  letterSpacing: "1.5px",
-                  marginTop: "1rem",
-                }}
-                type="submit"
-                className="btn btn-large waves-effect waves-light hoverable green accent-3"
-              >
-                Login
-              </button>
-            </div>
-          </form>
+          <div className="content-overlay" />
         </div>
       </div>
     </div>
