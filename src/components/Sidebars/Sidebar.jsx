@@ -1,20 +1,21 @@
 import React from "react";
-import { Link, NavLink as NavLinkRRD } from "react-router-dom";
-
+import { Link, NavLink as NavLinkRRD, } from "react-router-dom";
+import { NavLink, NavItem } from "reactstrap";
 const Sidebar = (props) => {
   const createLinks = (routes) => {
     return routes.map((prop, key) => {
       if (prop.layout === "/dashboard" && prop.show === "true") {
         return (
-          <Link
-            to={prop.layout + prop.path}
-            tag={NavLinkRRD}
-            className="waves-effect waves-cyan"
-            key={key}
-          >
+          <NavItem key={key}>
+            <NavLink
+              to={prop.layout + prop.path}
+              tag={NavLinkRRD}
+              activeClassName="active"
+            >
             <i className="material-icons">{prop.icon}</i>
             <span className="menu-title">{prop.name}</span>
-          </Link>
+          </NavLink>
+          </NavItem>
         );
       } else {
         return null;

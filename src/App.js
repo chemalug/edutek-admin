@@ -9,7 +9,8 @@ import LoginPage from "views/auth/Login";
 import RegisterPage from "views/auth/Register";
 
 import RoutePages from "views/RoutePages";
-import ColegiosPage from "./views/dashboard/admin/colegios/index.colegio";
+//import ColegiosPage from "./views/dashboard/admin/colegios/index.colegio";
+import AdminDashboard from "./views/dashboard/admin/admin.dashboard";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
           <Route exact path="/login" component={LoginPage} />
           <Route exact path="/register" component={RegisterPage} />
           <Switch>
-            <Route exact path="/dashboard" component={RoutePages} />
+            <PrivateRoute path="/dashboard" component={RoutePages} />
           </Switch>
         </div>
       </Router>

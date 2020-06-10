@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch } from "react-router-dom";
 import { AuthContext } from "utils/AuthProvider";
 
 import { db } from "fire/firebase";
@@ -22,7 +22,7 @@ const RoutePages = (props) => {
       return (
         <div>
           <Switch>
-            <Route exact path="/dashboard" component={AdminDashboard} />
+            <PrivateRoute path="/dashboard" component={AdminDashboard} />
           </Switch>
         </div>
       );

@@ -41,11 +41,7 @@ const AdminDashboard = (props) => {
       <div id="main">
         <div className="row">
           <Switch>
-            <Route
-              exact
-              path="/dashboard/schools"
-              render={(props) => <ColegiosPage {...props} />}
-            />
+            {getRoutes(routes)}
           </Switch>
         </div>
       </div>
