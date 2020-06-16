@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { AuthProvider, AuthContext } from "utils/AuthProvider";
+import { AuthProvider } from "utils/AuthProvider";
 import PrivateRoute from "utils/PrivateRoute";
 
 import AuthNavbar from "components/Navbars/AuthNavbar";
@@ -10,7 +10,7 @@ import RegisterPage from "views/auth/Register";
 
 import RoutePages from "views/RoutePages";
 //import ColegiosPage from "./views/dashboard/admin/colegios/index.colegio";
-import AdminDashboard from "./views/dashboard/admin/admin.dashboard";
+//import AdminDashboard from "./views/dashboard/admin/admin.dashboard";
 
 function App() {
   return (

@@ -5,7 +5,7 @@ import Sidebar from "components/Sidebars/Sidebar";
 
 import routes from "routes/admin.routes";
 import HeaderAdmin from "components/Headers/Header.admin";
-import ColegiosPage from "views/dashboard/admin/colegios/index.colegio";
+
 import PrivateRoute from "utils/PrivateRoute";
 
 const AdminDashboard = (props) => {
@@ -13,7 +13,7 @@ const AdminDashboard = (props) => {
     return routes.map((prop, key) => {
       if (prop.layout === "/dashboard") {
         return (
-          <Route
+          <PrivateRoute
             path={prop.layout + prop.path}
             component={prop.component}
             key={key}
@@ -33,16 +33,14 @@ const AdminDashboard = (props) => {
     }
     return "Dashboard";
   };
-
+  console.log(getRoutes(routes));
   return (
     <div>
       <HeaderAdmin />
       <Sidebar routes={routes} />
       <div id="main">
         <div className="row">
-          <Switch>
-            {getRoutes(routes)}
-          </Switch>
+          <Switch>{getRoutes(routes)}</Switch>
         </div>
       </div>
     </div>

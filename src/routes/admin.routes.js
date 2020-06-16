@@ -8,7 +8,16 @@ var routes = [
     component: Schools,
     layout: "/dashboard",
     rol: "admin",
-    show: "true",
+    show: true,
+  },
+  {
+    path: "/schools/addSchool",
+    name: "Colegios",
+    icon: "business",
+    component: Schools,
+    layout: "/dashboard",
+    rol: "admin",
+    show: false,
   },
 ];
 export default routes;

@@ -30,13 +30,13 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
     <link
-      href="dist/vendors/vendors.min.css"
+      href="%PUBLIC_URL%/dist/vendors/vendors.min.css"
       type="text/css"
       rel="stylesheet"
     />
     <!--<link href="dist/css/materialize.css" type="text/css" rel="stylesheet" />-->
     <link
-      href="dist/css/themes/vertical-dark-menu-template/style.css"
+      href="%PUBLIC_URL%/dist/css/themes/vertical-dark-menu-template/style.css"
       type="text/css"
       rel="stylesheet"
     />
@@ -58,7 +58,6 @@
     data-menu="vertical-dark-menu"
     data-col="2-columns"
   >
-    
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
@@ -79,17 +78,20 @@
       });
     </script>-->
     <!-- jQuery Library -->
-    <script type = "text/javascript"
-         src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>   
-    <script type="text/javascript" src="dist/vendors/vendors.min.css"></script>
-    <script type="text/javascript" src="dist/js/plugins.js"></script>
-    <script type="text/javascript" src="dist/js/search.js"></script>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-2.1.1.min.js"
+    ></script>
 
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        M.AutoInit();
-      });
-    </script>-->
+    <script
+      type="text/javascript"
+      src="%PUBLIC_URL%/dist/js/plugins.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="%PUBLIC_URL%/dist/js/search.js"
+    ></script>
+    <!--
+    -->
   </body>
 </html>
