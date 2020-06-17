@@ -1,4 +1,5 @@
 import Schools from "views/dashboard/admin/colegios/index.colegio";
+import addSchool from "views/dashboard/admin/colegios/add.colegio";
 
 var routes = [
   {
@@ -14,7 +15,7 @@ var routes = [
     path: "/schools/addSchool",
     name: "Colegios",
     icon: "business",
-    component: Schools,
+    component: addSchool,
     layout: "/dashboard",
     rol: "admin",
     show: false,

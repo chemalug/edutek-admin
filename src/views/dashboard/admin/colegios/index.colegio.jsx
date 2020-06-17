@@ -2,7 +2,9 @@ import React from "react";
 import MaterialTable from "material-table";
 
 import { db } from "fire/firebase";
-import AddColegio from "./add.colegio";
+
+import { Link } from "react-router-dom";
+import BrandHeader from "components/Headers/BrandHeader.admin";
 
 class ColegiosPage extends React.Component {
   constructor(props) {
@@ -57,43 +59,11 @@ class ColegiosPage extends React.Component {
   };
 
   render() {
+    console.log(this.props);
+
     return (
       <div>
-        <div
-          id="breadcrumbs-wrapper"
-          style={{
-            backgroundImage:
-              "url(" + require("assets/images/gallery/breadcrumb-bg.jpg") + ")",
-          }}
-        >
-          <div className="container">
-            <div className="row">
-              <div className="col s12 m6 l6">
-                <h5 className="breadcrumbs-title mt-0 mb-0 white-text">
-                  <span> Administración de colegios</span>
-                </h5>
-              </div>
-              <div className="col s12 m6 l6 right-align-md">
-                <ol className="breadcrumbs mb-0">
-                  <li className="breadcrumb-item active">
-                    <button
-                      className="waves-effect waves-light btn gradient-45deg-purple-deep-orange "
-                      onClick={this.toggle}
-                    >
-                      {!this.state.modal ? null : (
-                        <AddColegio
-                          modal={this.state.modal}
-                          toggle={this.toggle}
-                        />
-                      )}
-                      Agregar colegio
-                    </button>
-                  </li>
-                </ol>
-              </div>
-            </div>
-          </div>
-        </div>
+        <BrandHeader brandText={"Administración del instituciones"} />
         <div className="col s12">
           <div className="container">
             <div className="section">

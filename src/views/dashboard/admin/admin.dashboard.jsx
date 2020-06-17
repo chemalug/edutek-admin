@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Switch, Route, Link } from "react-router-dom";
+import React from "react";
+import { Switch } from "react-router-dom";
 
 import Sidebar from "components/Sidebars/Sidebar";
 
@@ -14,6 +14,7 @@ const AdminDashboard = (props) => {
       if (prop.layout === "/dashboard") {
         return (
           <PrivateRoute
+            exact
             path={prop.layout + prop.path}
             component={prop.component}
             key={key}
@@ -33,7 +34,7 @@ const AdminDashboard = (props) => {
     }
     return "Dashboard";
   };
-  console.log(getRoutes(routes));
+
   return (
     <div>
       <HeaderAdmin />

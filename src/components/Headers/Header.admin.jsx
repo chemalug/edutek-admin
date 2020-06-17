@@ -10,7 +10,7 @@ const HeaderAdmin = () => {
   return (
     <header className="page-topbar" id="header">
       <div className="navbar navbar-fixed ">
-        <nav className="navbar-main navbar-color nav-collapsible sideNav-lock gradient-45deg-purple-deep-orange">
+        <nav className="navbar-main navbar-color nav-collapsible sideNav-lock gradient-45deg-blue-grey-blue">
           <div className="nav-wrapper">
             <div className="header-search-wrapper hide-on-med-and-down">
               <i className="material-icons">search</i>
