@@ -17,7 +17,15 @@ class ColegiosPage extends React.Component {
         { title: "Email", field: "email" },
         { title: "Teléfono", field: "telefono", type: "numeric" },
         { title: "Dirección", field: "direccion" },
-        { title: "Status", field: "status" },
+        {
+          title: "Status",
+          field: "status",
+          lookup: {
+            activo: "activo",
+            inactivo: "inactivo",
+            cancelado: "cancelado",
+          },
+        },
         { title: "uid", field: "uid", hidden: true },
       ],
       rows: [],
@@ -63,15 +71,23 @@ class ColegiosPage extends React.Component {
 
     return (
       <div>
-        <BrandHeader brandText={"Administración del instituciones"} />
+        <BrandHeader brandText={"Administración de instituciones"} />
         <div className="col s12">
           <div className="container">
             <div className="section">
               <div className="card">
                 <div className="card-content">
+                  <div className="card-title right-align-md">
+                    <Link
+                      className="waves-effect waves-light btn green "
+                      to="/dashboard/schools/addSchool"
+                    >
+                      Agregar colegio
+                    </Link>
+                  </div>
                   {/* Aqui va el contenido */}
                   <MaterialTable
-                    title="Listado de colegioss"
+                    title="Listado de colegios"
                     columns={this.state.columns}
                     data={this.state.rows}
                     editable={{

@@ -11,9 +11,6 @@ export const AuthProvider = ({ children }) => {
     auth.onAuthStateChanged((user) => {
       setCurrentUser(user);
       setPending(false);
-      if (!currentUser) {
-        require("App.scss");
-      }
     });
   });
   if (pending) {

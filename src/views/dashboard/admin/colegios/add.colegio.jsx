@@ -1,7 +1,9 @@
 import React from "react";
-
 import { db, firebase } from "fire/firebase";
-import { Redirect } from "react-router-dom";
+import BrandHeader from "components/Headers/BrandHeader.admin";
+import { Link } from "react-router-dom";
+
+const isempty = require("is-empty");
 
 const AddColegio = (props) => {
   const [colegio, setColegio] = React.useState({
@@ -20,7 +22,8 @@ const AddColegio = (props) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (colegio.nombre === "") {
+    console.log(props);
+    if (isempty(colegio.nombre)) {
       alert("Falta información");
       return;
     }
@@ -34,8 +37,13 @@ const AddColegio = (props) => {
         }
       });
   };
+
+  const close = () => {
+    console.log(props);
+  };
   return (
     <div>
+      <BrandHeader brandText={"Agregar institución"} />
       <div className="row">
         <div className="col s12 m3 l3"></div>
         <div className="col s12 m6 l6">
@@ -115,15 +123,16 @@ const AddColegio = (props) => {
                 <div className="row">
                   <div className="input-field col-s12">
                     <button
-                      className="btn cyan waves-effect waves-light right"
+                      className="btn cyan waves-effect waves-light"
                       type="submit"
                     >
                       Enviar <i className="material-icons right">send</i>
                     </button>{" "}
                     {"   "}
                     <button
-                      className="btn red waves-effect waves-light right"
-                      type="submit"
+                      className="btn red waves-effect waves-light"
+                      type="button"
+                      onClick={props.history.goBack}
                     >
                       Cancelar <i className="material-icons right">close</i>
                     </button>
