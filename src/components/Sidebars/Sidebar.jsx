@@ -1,20 +1,25 @@
 import React from "react";
-import { Link, NavLink as NavLinkRRD } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Sidebar = (props) => {
+  const { location } = props;
+
   const createLinks = (routes) => {
     return routes.map((prop, key) => {
       if (prop.layout === "/dashboard" && prop.show) {
         return (
           <li key={key}>
-            <Link
-              to={prop.layout + prop.path}
-              tag={NavLinkRRD}
-              className="active"
-            >
-              <i className="material-icons">{prop.icon}</i>
-              <span className="menu-title">{prop.name}</span>
-            </Link>
+            {prop.path === "/" + location.pathname.split("/")[2] ? (
+              <Link to={prop.layout + prop.path} className="active">
+                <i className="material-icons">{prop.icon}</i>
+                <span className="menu-title">{prop.name}</span>
+              </Link>
+            ) : (
+              <Link to={prop.layout + prop.path}>
+                <i className="material-icons">{prop.icon}</i>
+                <span className="menu-title">{prop.name}</span>
+              </Link>
+            )}
           </li>
         );
       } else {

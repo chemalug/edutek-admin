@@ -6,7 +6,7 @@ import PrivateRoute from "utils/PrivateRoute";
 import AuthNavbar from "components/Navbars/AuthNavbar";
 import LandingPage from "views/Landing/LandingPage";
 import LoginPage from "views/auth/Login";
-import RegisterPage from "views/auth/Register";
+//import RegisterPage from "views/auth/Register";
 
 import RoutePages from "views/RoutePages";
 //import ColegiosPage from "./views/dashboard/admin/colegios/index.colegio";
@@ -20,7 +20,7 @@ function App() {
           <AuthNavbar />
           <Route exact path="/" component={LandingPage} />
           <Route exact path="/login" component={LoginPage} />
-          <Route exact path="/register" component={RegisterPage} />
+          {/*<Route exact path="/register" component={RegisterPage} />*/}
           <Switch>
             <PrivateRoute path="/dashboard" component={RoutePages} />
           </Switch>

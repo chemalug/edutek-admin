@@ -1,17 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import MaterialTable from "material-table";
 
 import { db } from "fire/firebase";
-
-import { Link } from "react-router-dom";
-import BrandHeader from "components/Headers/BrandHeader.admin";
 
 class ColegiosPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modal: false,
-      isEdit: false,
       columns: [
         { title: "Nombre", field: "nombre" },
         { title: "Email", field: "email" },
@@ -60,18 +57,9 @@ class ColegiosPage extends React.Component {
     });
   }
 
-  toggle = () => {
-    this.setState({
-      modal: !this.state.modal,
-    });
-  };
-
   render() {
-    console.log(this.props);
-
     return (
       <div>
-        <BrandHeader brandText={"Administración de instituciones"} />
         <div className="col s12">
           <div className="container">
             <div className="section">

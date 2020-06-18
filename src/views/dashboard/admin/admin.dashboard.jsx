@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch } from "react-router-dom";
+import { Switch, Link } from "react-router-dom";
 
 import Sidebar from "components/Sidebars/Sidebar";
 
@@ -7,6 +7,7 @@ import routes from "routes/admin.routes";
 import HeaderAdmin from "components/Headers/Header.admin";
 
 import PrivateRoute from "utils/PrivateRoute";
+import BrandHeader from "components/Headers/BrandHeader.admin";
 
 const AdminDashboard = (props) => {
   const getRoutes = (routes) => {
@@ -28,9 +29,12 @@ const AdminDashboard = (props) => {
 
   const getBrandText = (path) => {
     for (let i = 0; i < routes.length; i++) {
-      if (path.indexOf(routes[i].layout + routes[i].path) !== -1) {
+      if (path === routes[i].layout + routes[i].path) {
         return routes[i].name;
       }
+      /*if (path.indexOf(routes[i].layout + routes[i].path) !== -1) {
+        return routes[i].name;
+      }*/
     }
     return "Dashboard";
   };
@@ -38,9 +42,15 @@ const AdminDashboard = (props) => {
   return (
     <div>
       <HeaderAdmin />
-      <Sidebar routes={routes} />
+      <Sidebar
+        routes={routes}
+        location={props.location}
+        brandText={getBrandText(props.location.pathname)}
+      />
       <div id="main">
         <div className="row">
+          <BrandHeader brandText={getBrandText(props.location.pathname)} />
+
           <Switch>{getRoutes(routes)}</Switch>
         </div>
       </div>

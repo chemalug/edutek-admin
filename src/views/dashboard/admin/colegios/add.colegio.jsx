@@ -1,7 +1,5 @@
 import React from "react";
 import { db, firebase } from "fire/firebase";
-import BrandHeader from "components/Headers/BrandHeader.admin";
-import { Link } from "react-router-dom";
 
 const isempty = require("is-empty");
 
@@ -22,8 +20,8 @@ const AddColegio = (props) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(props);
-    if (isempty(colegio.nombre)) {
+
+    if (isempty(colegio.nombre) || isempty(colegio.email)) {
       alert("Falta información");
       return;
     }
@@ -38,20 +36,13 @@ const AddColegio = (props) => {
       });
   };
 
-  const close = () => {
-    console.log(props);
-  };
   return (
     <div>
-      <BrandHeader brandText={"Agregar institución"} />
       <div className="row">
         <div className="col s12 m3 l3"></div>
         <div className="col s12 m6 l6">
           <div id="validation" className="card card card-default">
             <div className="card-content">
-              <div className="row">
-                <h4 className="card-title"> Agregar institución</h4>
-              </div>
               <form noValidate onSubmit={onSubmit}>
                 <div className="row">
                   <div className="input-field col s11">
