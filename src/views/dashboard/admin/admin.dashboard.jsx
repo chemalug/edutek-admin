@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Link } from "react-router-dom";
+import { Switch } from "react-router-dom";
 
 import Sidebar from "components/Sidebars/Sidebar";
 

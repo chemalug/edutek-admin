@@ -10,16 +10,11 @@ const MenuDashboard = (props) => {
             <div className="card-content">
               <div>
                 <h4 className="card-title">
-                  Gradient Card &amp; Gradient Card With Analytics
+                  Panel de administración & Herramientas administraticas Edutek
                 </h4>
                 <p>
-                  Here is the gradient card with flat image for all gradient
-                  classes please check
-                  <a href="css-color.html" target="_blank">
-                    {"{"}" "{"}"}
-                    css-color.html
-                  </a>
-                  .
+                  Espacio para la administración de recursos de la plataforma
+                  Edutek .
                 </p>
                 <div className="row">
                   <div className="col s12 m3">
@@ -40,7 +35,7 @@ const MenuDashboard = (props) => {
                     </Link>
                   </div>
                   <div className="col s12 m3">
-                    <Link to="/dashboard/profesor">
+                    <Link to="/dashboard/profesores">
                       <div className="card gradient-shadow gradient-45deg-amber-amber border-radius-3">
                         <div className="card-content center">
                           <img
