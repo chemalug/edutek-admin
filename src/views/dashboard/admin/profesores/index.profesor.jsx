@@ -4,25 +4,94 @@ import MaterialTable from "material-table";
 
 export const ProfesorPage = (props) => {
   const columns = [
-    { title: "Nombre", field: "nombre" },
-    { title: "Email", field: "email" },
+    { title: "Nombre", field: "nombres" },
+    { title: "Apellidos", field: "apellidos" },
     { title: "Teléfono", field: "telefono", type: "numeric" },
     { title: "Dirección", field: "direccion" },
-    {
-      title: "Status",
-      field: "status",
-      lookup: {
-        activo: "activo",
-        inactivo: "inactivo",
-        cancelado: "cancelado",
-      },
-    },
+    { title: "Email", field: "email" },
     { title: "uid", field: "uid", hidden: true },
   ];
+
+  const detailPanel = [
+    {
+      tooltip: "Mostrar colegios",
+      render: (rowData) => {
+        return (
+          <div className="row">
+            <div className="col s12 m12 l12">
+              <div
+                id="responsive-table"
+                className="card card card-default scrollspy"
+              >
+                <div className="card-content">
+                  <h4 className="card-title">Responsive Table</h4>
+                  <p className="mb-2">
+                    Add{" "}
+                    <code className="  language-markup">
+                      class="responsive-table"
+                    </code>{" "}
+                    to the table tag to make the table horizontally scrollable
+                    on smaller screen widths.
+                  </p>
+                  <div className="row">
+                    <div className="col s12"></div>
+                    <div className="col s12">
+                      <table className="responsive-table">
+                        <thead>
+                          <tr>
+                            <th data-field="id">Name</th>
+                            <th data-field="name">Item Name</th>
+                            <th data-field="price">Item Price</th>
+                            <th data-field="total">Total</th>
+                            <th data-field="status">Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Alvin</td>
+                            <td>Eclair</td>
+                            <td>$0.87</td>
+                            <td>$1.87</td>
+                            <td>Yes</td>
+                          </tr>
+                          <tr>
+                            <td>Alan</td>
+                            <td>Jellybean</td>
+                            <td>$3.76</td>
+                            <td>$10.87</td>
+                            <td>No</td>
+                          </tr>
+                          <tr>
+                            <td>Jonathan</td>
+                            <td>Lollipop</td>
+                            <td>$7.00</td>
+                            <td>$12.87</td>
+                            <td>Yes</td>
+                          </tr>
+                          <tr>
+                            <td>Shannon</td>
+                            <td>KitKat</td>
+                            <td>$9.99</td>
+                            <td>$14.87</td>
+                            <td>No</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      },
+    },
+  ];
+
   /*useEffect = () => {
     
   };*/
-  console.log(columns);
+
   return (
     <div className="col s12">
       <div className="container">
@@ -38,11 +107,25 @@ export const ProfesorPage = (props) => {
                 </Link>
               </div>
               <div className="row">
-                {/*<MaterialTable
+                <MaterialTable
                   title="Listado de profesores"
-                  columns={null}
-                  data={null}
-                />*/}
+                  columns={columns}
+                  detailPanel={detailPanel}
+                  data={[
+                    {
+                      nombres: "Mehmet",
+                      apellidos: "Baran",
+                      telefono: 1987,
+                      direccion: 63,
+                    },
+                    {
+                      nombres: "Mehmet",
+                      apellidos: "Baran",
+                      telefono: 1987,
+                      direccion: 63,
+                    },
+                  ]}
+                />
               </div>
             </div>
           </div>

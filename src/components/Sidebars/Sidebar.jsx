@@ -29,7 +29,7 @@ const Sidebar = (props) => {
   };
 
   return (
-    <aside className="sidenav-main nav-expanded nav-lock nav-collapsible sidenav-dark sidenav-active-rounded">
+    <aside className="sidenav-main sidenav-dark sidenav-active-rounded">
       <div className="brand-sidebar">
         <h1 className="logo-wrapper">
           <Link className="brand-logo darken-1" to="/">
@@ -45,13 +45,20 @@ const Sidebar = (props) => {
             />
             <span className="logo-text hide-on-med-and-down">Edutek</span>
           </Link>
+          <Link
+            className="navbar-toggler sidenav-trigger"
+            to="#!"
+            data-target="slide-out"
+          >
+            <i className="material-icons">radio_button_checked</i>
+          </Link>
         </h1>
       </div>
       <ul
         className="sidenav sidenav-collapsible leftside-navigation collapsible sidenav-fixed menu-shadow"
-        id="slide-out"
         data-menu="menu-navigation"
         data-collapsible="accordion"
+        id="slide-out"
       >
         <li className="navigation-header">
           <span className="navigation-header-text">Administración</span>
@@ -60,13 +67,13 @@ const Sidebar = (props) => {
         {createLinks(props.routes)}
       </ul>
       <div className="navigation-background" />
-      <a
+      <Link
         className="sidenav-trigger btn-sidenav-toggle btn-floating btn-medium waves-effect waves-light hide-on-large-only"
-        href="#!"
+        to="#!"
         data-target="slide-out"
       >
         <i className="material-icons">menu</i>
-      </a>
+      </Link>
     </aside>
   );
 };

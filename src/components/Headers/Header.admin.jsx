@@ -10,7 +10,7 @@ const HeaderAdmin = () => {
   return (
     <header className="page-topbar" id="header">
       <div className="navbar navbar-fixed ">
-        <nav className="navbar-main navbar-color nav-collapsible sideNav-lock gradient-45deg-blue-grey-blue">
+        <nav className="navbar-main navbar-color nav-collapsible gradient-45deg-blue-grey-blue sideNav-lock">
           <div className="nav-wrapper">
             <div className="header-search-wrapper hide-on-med-and-down">
               <i className="material-icons">search</i>
@@ -93,6 +93,42 @@ const HeaderAdmin = () => {
               </li>
             </ul>
           </div>
+          <nav className="display-none search-sm" style={{ display: "none" }}>
+            <div className="nav-wrapper">
+              <form id="navbarForm">
+                <div className="input-field search-input-sm">
+                  <input
+                    className="search-box-sm mb-0"
+                    type="search"
+                    required
+                    id="search"
+                    placeholder="Explore Materialize"
+                    data-search="template-list"
+                  />
+                  <label className="label-icon active" htmlFor="search">
+                    <i className="material-icons search-sm-icon">search</i>
+                  </label>
+                  <i className="material-icons search-sm-close">close</i>
+                  <ul className="search-list collection search-list-sm display-none ps">
+                    <div className="ps__rail-x" style={{ left: 0, bottom: 0 }}>
+                      <div
+                        className="ps__thumb-x"
+                        tabIndex={0}
+                        style={{ left: 0, width: 0 }}
+                      />
+                    </div>
+                    <div className="ps__rail-y" style={{ top: 0, right: 0 }}>
+                      <div
+                        className="ps__thumb-y"
+                        tabIndex={0}
+                        style={{ top: 0, height: 0 }}
+                      />
+                    </div>
+                  </ul>
+                </div>
+              </form>
+            </div>
+          </nav>
         </nav>
       </div>
     </header>

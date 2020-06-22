@@ -10,7 +10,7 @@ const MenuDashboard = (props) => {
             <div className="card-content">
               <div>
                 <h4 className="card-title">
-                  Panel de administración & Herramientas administraticas Edutek
+                  Panel de administración & Herramientas administrativas Edutek
                 </h4>
                 <p>
                   Espacio para la administración de recursos de la plataforma
