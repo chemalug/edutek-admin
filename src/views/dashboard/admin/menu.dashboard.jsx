@@ -52,17 +52,21 @@ const MenuDashboard = (props) => {
                     </Link>
                   </div>
                   <div className="col s12 m3">
-                    <div className="card gradient-shadow gradient-45deg-red-pink border-radius-3">
-                      <div className="card-content center">
-                        <img
-                          src="../../../app-assets/images/icon/laptop.png"
-                          alt="images"
-                          className="width-40"
-                        />
-                        <h5 className="white-text lighten-4">40% Off</h5>
-                        <p className="white-text lighten-4">On apple macbook</p>
+                    <Link to="/dashboard/profesores">
+                      <div className="card gradient-shadow gradient-45deg-red-pink border-radius-3">
+                        <div className="card-content center">
+                          <img
+                            src={require("assets/images/icon/assigment.png")}
+                            alt="images"
+                            className="width-60"
+                          />
+                          <h5 className="white-text lighten-4">Asignaciones</h5>
+                          <p className="white-text lighten-4">
+                            Administrar cursos
+                          </p>
+                        </div>
                       </div>
-                    </div>
+                    </Link>
                   </div>
                   <div className="col s12 m3">
                     <div className="card gradient-shadow gradient-45deg-green-teal border-radius-3">

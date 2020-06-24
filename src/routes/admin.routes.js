@@ -1,6 +1,6 @@
 import Schools from "views/dashboard/admin/colegios/index.colegio";
 import addSchool from "views/dashboard/admin/colegios/add.colegio";
-import { ProfesorPage } from "views/dashboard/admin/profesores/index.profesor";
+import ProfesorPage from "views/dashboard/admin/profesores/index.profesor";
 import MenuDashboard from "views/dashboard/admin/menu.dashboard";
 
 var routes = [
