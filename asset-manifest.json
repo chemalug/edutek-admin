@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/edutek-admin/static/css/main.9a276008.chunk.css",
+    "main.js": "/edutek-admin/static/js/main.7d9cfed3.chunk.js",
+    "main.js.map": "/edutek-admin/static/js/main.7d9cfed3.chunk.js.map",
+    "runtime-main.js": "/edutek-admin/static/js/runtime-main.33f797a7.js",
+    "runtime-main.js.map": "/edutek-admin/static/js/runtime-main.33f797a7.js.map",
+    "static/js/2.9df05fbf.chunk.js": "/edutek-admin/static/js/2.9df05fbf.chunk.js",
+    "static/js/2.9df05fbf.chunk.js.map": "/edutek-admin/static/js/2.9df05fbf.chunk.js.map",
+    "index.html": "/edutek-admin/index.html",
+    "precache-manifest.0aad67a3a7b2c7ad524b1cd0d97319e7.js": "/edutek-admin/precache-manifest.0aad67a3a7b2c7ad524b1cd0d97319e7.js",
+    "service-worker.js": "/edutek-admin/service-worker.js",
+    "static/css/main.9a276008.chunk.css.map": "/edutek-admin/static/css/main.9a276008.chunk.css.map",
+    "static/js/2.9df05fbf.chunk.js.LICENSE.txt": "/edutek-admin/static/js/2.9df05fbf.chunk.js.LICENSE.txt",
+    "static/media/style.css": "/edutek-admin/static/media/macbook.2d07ebda.png",
+    "static/media/assigment.png": "/edutek-admin/static/media/assigment.93a42620.png",
+    "static/media/avatar-7.png": "/edutek-admin/static/media/avatar-7.22fb5b7f.png",
+    "static/media/breadcrumb-bg.jpg": "/edutek-admin/static/media/breadcrumb-bg.59aa18ea.jpg",
+    "static/media/login.css": "/edutek-admin/static/media/flat-bg.548eb8f3.jpg",
+    "static/media/professor.png": "/edutek-admin/static/media/professor.54ea9e69.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.33f797a7.js",
+    "static/js/2.9df05fbf.chunk.js",
+    "static/css/main.9a276008.chunk.css",
+    "static/js/main.7d9cfed3.chunk.js"
+  ]
+}
