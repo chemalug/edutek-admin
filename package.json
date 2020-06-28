@@ -2,7 +2,6 @@
   "name": "edutek-admin",
   "version": "0.1.0",
   "private": true,
-  //"homepage": "./",
   "homepage": "https://chemalug.github.io/edutek-admin",
   "engines": {
     "npm": "6.14.4",
