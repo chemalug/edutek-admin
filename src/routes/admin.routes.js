@@ -1,6 +1,7 @@
 import Schools from "views/dashboard/admin/colegios/index.colegio";
 import addSchool from "views/dashboard/admin/colegios/add.colegio";
 import ProfesorPage from "views/dashboard/admin/profesores/index.profesor";
+import addProfesor from "views/dashboard/admin/profesores/add.profesor";
 import MenuDashboard from "views/dashboard/admin/menu.dashboard";
 
 var routes = [
@@ -39,6 +40,15 @@ var routes = [
     layout: "/dashboard",
     rol: "admin",
     show: true,
+  },
+  {
+    path: "/profesores/addProfesor",
+    name: "Agregar profesor",
+    icon: "assignment_ind",
+    component: addProfesor,
+    layout: "/dashboard",
+    rol: "admin",
+    show: false,
   },
 ];
 export default routes;

@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { Switch } from "react-router-dom";
 import { AuthContext } from "utils/AuthProvider";
 
-import { db } from "fire/firebase";
+import { db, auth } from "fire/firebase";
 //import Dashboard from "views/dashboard/Dashboard";
 import PrivateRoute from "utils/PrivateRoute";
 import AdminDashboard from "views/dashboard/admin/admin.dashboard";
@@ -14,11 +14,12 @@ const RoutePages = (props) => {
   const { currentUser } = useContext(AuthContext);
 
   M.AutoInit();
-  if (currentUser) {
+
+  if (currentUser.emailVerified) {
     db.ref(`/users/${currentUser.uid}`).once("value", (user) => {
-      setIsAdmin(user.val().info.role.isAdmin);
+      setIsAdmin(user.val().info.role);
     });
-    if (isAdmin) {
+    if (isAdmin === "admin") {
       return (
         <div>
           <Switch>
@@ -30,7 +31,8 @@ const RoutePages = (props) => {
       return <div></div>;
     }
   } else {
-    return <div></div>;
+    props.history.push("/login");
+    return <div>Email no se ha verificado</div>;
   }
 };
 
