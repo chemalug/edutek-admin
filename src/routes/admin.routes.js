@@ -50,5 +50,14 @@ var routes = [
     rol: "admin",
     show: false,
   },
+  {
+    path: "/asignacion",
+    name: "Asignaciones",
+    icon: "group_add",
+    component: ProfesorPage,
+    layout: "/dashboard",
+    rol: "admin",
+    show: true,
+  },
 ];
 export default routes;

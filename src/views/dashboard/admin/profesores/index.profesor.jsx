@@ -13,7 +13,7 @@ class ProfesorPage extends Component {
         { title: "Apellidos", field: "apellidos" },
         { title: "Teléfono", field: "telefono", type: "numeric" },
         { title: "Dirección", field: "direccion" },
-        { title: "Email", field: "email" },
+        { title: "Email", field: "email", editable: "never" },
         { title: "uid", field: "uid", hidden: true },
       ],
       rows: [],
@@ -37,6 +37,7 @@ class ProfesorPage extends Component {
       this.setState((prevState) => {
         return { rows: [] };
       });
+      datos = [];
       if (snapShot.exists()) {
         snapShot.forEach((child) => {
           let a = child.val();
@@ -77,6 +78,27 @@ class ProfesorPage extends Component {
                     columns={this.state.columns}
                     detailPanel={this.detailPanel}
                     data={this.state.rows}
+                    editable={{
+                      onRowUpdate: (newData, oldData) =>
+                        new Promise((resolve) => {
+                          setTimeout(() => {
+                            resolve();
+                            if (oldData) {
+                              db.ref(`/profesores/${oldData.uid}`).set(newData);
+                              db.ref(`/users/${oldData.uid}`).set(newData);
+                            }
+                          }, 600);
+                        }),
+                      onRowDelete: (oldData) =>
+                        new Promise((resolve) => {
+                          setTimeout(() => {
+                            resolve();
+                            db.ref(`/profesores/${oldData.uid}`).remove();
+                            db.ref(`/users/${oldData.uid}`).remove();
+                          }, 600);
+                        }),
+                    }}
+                    options={{ actionsColumnIndex: -1 }}
                   />
                 </div>
               </div>
